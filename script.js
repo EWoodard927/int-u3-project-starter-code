@@ -1,5 +1,5 @@
 // Declare variables below to save the different divs of your story.
-
+let startButton = document.querySelector(start-button);
 
 
 
@@ -12,9 +12,10 @@
 //  - Then fill in the blanks with the correct variables.
 
 
-// INSERT_VARIABLE.addEventListener('click', function(){
+startButton.addEventListener('click', function(){
+    
 
-// });
+});
 
 // INSERT_VARIABLE.addEventListener('click', function(){
 
