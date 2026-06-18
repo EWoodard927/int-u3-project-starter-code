@@ -1,6 +1,19 @@
 // Declare variables below to save the different divs of your story.
-let startButton = document.querySelector(start-button);
-
+let startButton = document.querySelector(".start-button");
+let meetMaggieButton = document.querySelector(".meetMaggieButton");
+let charmanderButton = document.querySelector(".charmanderButton");
+let squirtleButton = document.querySelector(".squirtleButton");
+let bulbasaurButton = document.querySelector(".bulbasaurButton");
+let battleWithCharmanderButton = document.querySelector(".battleWithCharmanderButton");
+let battleWithSquirtleButton = document.querySelector(".battleWithSquirtleButton");
+let battleWithBulbasaurButton = document.querySelector(".battleWithBulbasaurButton");
+let scratchButton = document.querySelector(".scratchButton");
+let emberButton = document.querySelector(".emberButton");
+let runAwayButton = document.querySelector(".runAwayButton");
+let tackleButtonSquirtle = document.querySelector(".tackleButtonSquirtle");
+let waterGunButton = document.querySelector(".waterGunButton");
+let tackleButtonBulbasaur = document.querySelector(".tackleButtonBulbasaur");
+let vineWhipButton = document.querySelector(".vineWhipButton");
 
 
 
