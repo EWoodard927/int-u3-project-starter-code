@@ -9,7 +9,9 @@ let battleWithSquirtleButton = document.querySelector(".battleWithSquirtleButton
 let battleWithBulbasaurButton = document.querySelector(".battleWithBulbasaurButton");
 let scratchButton = document.querySelector(".scratchButton");
 let emberButton = document.querySelector(".emberButton");
-let runAwayButton = document.querySelector(".runAwayButton");
+let runAwayButtonCharmander = document.querySelector(".runAwayButtonCharmander");
+let runAwayButtonSquirtle = document.querySelector(".runAwayButtonSquirtle");
+let runAwayButtonBulbasaur = document.querySelector(".runAwayButtonBulbasaur");
 let tackleButtonSquirtle = document.querySelector(".tackleButtonSquirtle");
 let waterGunButton = document.querySelector(".waterGunButton");
 let tackleButtonBulbasaur = document.querySelector(".tackleButtonBulbasaur");
@@ -26,7 +28,18 @@ let battleScreenBulbasaur = document.querySelector(".battleScreenBulbasaur");
 let runAwayScreen = document.querySelector(".runAwayScreen");
 let losingScreen = document.querySelector(".losingScreen");
 let winningScreen = document.querySelector(".winningScreen");
-
+let battleHeaderCharmander = document.querySelector(".battleHeaderCharmander");
+let battleHeaderSquirtle = document.querySelector(".battleHeaderSquirtle");
+let battleHeaderBulbasaur = document.querySelector(".battleHeaderBulbasaur");
+let playerHealthC = document.querySelector(".playerHealthC"); 
+let rivalHealthS = document.querySelector(".rivalHealthS");
+let playerHealthS = document.querySelector(".playerHealthS"); 
+let rivalHealthB = document.querySelector(".rivalHealthB");
+let playerHealthB = document.querySelector(".playerHealthB"); 
+let rivalHealthC = document.querySelector(".rivalHealthC");
+let enemySquirtleHealth = 25;
+let enemyBulbasaurHealth = 25;
+let enemyCharmanderHealth = 25;
 // When you're ready to make event handlers, uncomment the code below. 
 //  - Then fill in the blanks with the correct variables.
 
@@ -59,6 +72,7 @@ bulbasaurButton.addEventListener('click', function(){
 battleWithCharmanderButton.addEventListener('click', function(){
     charmanderChoice.style.display = "none";
     battleScreenCharmander.style.display = "block";
+    rivalHealthS.textContent = enemySquirtleHealth;
 });
 
 battleWithSquirtleButton.addEventListener('click', function(){
@@ -71,13 +85,87 @@ battleWithBulbasaurButton.addEventListener('click', function(){
     battleScreenBulbasaur.style.display = "block";
 });
 
-// INSERT_VARIABLE.addEventListener('click', function(){
+runAwayButtonCharmander.addEventListener('click', function(){
+    battleScreenCharmander.style.display = "none";
+    runAwayScreen.style.display = "block";
+})
 
-// });
+runAwayButtonSquirtle.addEventListener('click', function(){
+    battleScreenSquirtle.style.display = "none";
+    runAwayScreen.style.display = "block";
+})
 
-// INSERT_VARIABLE.addEventListener('click', function(){
+runAwayButtonBulbasaur.addEventListener('click', function(){
+    battleScreenBulbasaur.style.display = "none";
+    runAwayScreen.style.display = "block";
+})
 
-// });
+scratchButton.addEventListener('click', function(){
+    battleHeaderCharmander.innerHTML = "Charmander used Scratch! It deals 9 damage!";
+    enemySquirtleHealth -= 9;
+    rivalHealthS.textContent = enemySquirtleHealth;
+
+    if(enemySquirtleHealth <= 0) {
+    battleScreenCharmander.style.display = "none";
+    winningScreen.style.display = "block";
+    }
+});
+
+emberButton.addEventListener('click', function(){
+    battleHeaderCharmander.innerHTML = "Charmander used Ember! It's not very effective. It deals 5 damage!";
+    enemySquirtleHealth -= 5;
+    rivalHealthS.textContent = enemySquirtleHealth;
+
+    if(enemySquirtleHealth <= 0) {
+    battleScreenCharmander.style.display = "none";
+    winningScreen.style.display = "block";
+    }
+});
+
+tackleButtonSquirtle.addEventListener('click', function(){
+    battleHeaderSquirtle.innerHTML = "Squirtle used Tackle! It deals 9 damage!";
+    enemyBulbasaurHealth -= 9;
+    rivalHealthB.textContent = enemyBulbasaurHealth;
+
+    if(enemyBulbasaurHealth <= 0) {
+    battleScreenSquirtle.style.display = "none";
+    winningScreen.style.display = "block";
+    }
+});
+
+waterGunButton.addEventListener('click', function(){
+    battleHeaderSquirtle.innerHTML = "Squirtle used Water Gun! It's not very effective. It deals 5 damage.";
+    enemyBulbasaurHealth -= 5;
+    rivalHealthB.textContent = enemyBulbasaurHealth;
+
+    if(enemyBulbasaurHealth <= 0) {
+    battleScreenSquirtle.style.display = "none";
+    winningScreen.style.display = "block";
+    }
+});
+
+tackleButtonBulbasaur.addEventListener('click', function(){
+    battleHeaderBulbasaur.innerHTML = "Bulbasaur used Tackle! It deals 9 damage!";
+    enemyCharmanderHealth -= 9;
+    rivalHealthC.textContent = enemyCharmanderHealth;
+
+    if(enemyCharmanderHealth <= 0) {
+    battleScreenBulbasaur.style.display = "none";
+    winningScreen.style.display = "block";
+    }
+});
+
+vineWhipButton.addEventListener('click', function(){
+    battleHeaderBulbasaur.innerHTML = "Bulbasaur used Vine Whip! It's not very effective. It deals 5 damage.";
+    enemyCharmanderHealth -= 5;
+    rivalHealthC.textContent = enemyCharmanderHealth;
+
+    if(enemyCharmanderHealth <= 0) {
+    battleScreenBulbasaur.style.display = "none";
+    winningScreen.style.display = "block";
+    }
+});
+
 
 // INSERT_VARIABLE.addEventListener('click', function(){
 
