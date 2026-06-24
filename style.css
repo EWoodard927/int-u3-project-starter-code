@@ -76,6 +76,13 @@ body {
     display: none;
 }
 
+.battleHeaderCharmander,
+.battleHeaderSquirtle,
+.battleHeaderBulbasaur {
+    font-size: 30px;
+    color: red;
+}
+
 /* Style the buttons container */
 .buttons {
     margin: 20px;
@@ -101,7 +108,7 @@ button:hover {
 
 img {
     max-width: 100%;
-    height: 450px;
+    height: 425px;
     margin-bottom: 10px;
     width: auto;
 }

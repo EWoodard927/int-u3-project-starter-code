@@ -40,6 +40,9 @@ let rivalHealthC = document.querySelector(".rivalHealthC");
 let enemySquirtleHealth = 25;
 let enemyBulbasaurHealth = 25;
 let enemyCharmanderHealth = 25;
+let starterCharmanderHealth = 25;
+let starterSquirtleHealth = 25;
+let starterBulbasaurHealth = 25;
 // When you're ready to make event handlers, uncomment the code below. 
 //  - Then fill in the blanks with the correct variables.
 
@@ -73,16 +76,21 @@ battleWithCharmanderButton.addEventListener('click', function(){
     charmanderChoice.style.display = "none";
     battleScreenCharmander.style.display = "block";
     rivalHealthS.textContent = enemySquirtleHealth;
+    playerHealthC.textContent = starterCharmanderHealth;
 });
 
 battleWithSquirtleButton.addEventListener('click', function(){
     squirtleChoice.style.display = "none";
     battleScreenSquirtle.style.display = "block";
+    rivalHealthB.textContent = enemyBulbasaurHealth;
+    playerHealthS.textContent = starterSquirtleHealth;
 });
 
 battleWithBulbasaurButton.addEventListener('click', function(){
     bulbasaurChoice.style.display = "none";
     battleScreenBulbasaur.style.display = "block";
+    rivalHealthC.textContent = enemyCharmanderHealth;
+    playerHealthB.textContent = starterBulbasaurHealth;
 });
 
 runAwayButtonCharmander.addEventListener('click', function(){
@@ -101,14 +109,30 @@ runAwayButtonBulbasaur.addEventListener('click', function(){
 })
 
 scratchButton.addEventListener('click', function(){
-    battleHeaderCharmander.innerHTML = "Charmander used Scratch! It deals 9 damage!";
-    enemySquirtleHealth -= 9;
+    battleHeaderCharmander.innerHTML = "Charmander used Scratch! It deals 10 damage!";
+    enemySquirtleHealth -= 10;
     rivalHealthS.textContent = enemySquirtleHealth;
 
     if(enemySquirtleHealth <= 0) {
     battleScreenCharmander.style.display = "none";
     winningScreen.style.display = "block";
     }
+
+    setTimeout(function() {
+        battleHeaderCharmander.innerHTML = "Squirtle used Water Gun! It's super effective! It deals 12 damage!";
+        starterCharmanderHealth -= 12;
+        playerHealthC.textContent = starterCharmanderHealth;
+
+        if(starterCharmanderHealth <= 0 && enemySquirtleHealth > 0) {
+    battleScreenCharmander.style.display = "none";
+    losingScreen.style.display = "block";
+    }
+    }, 2500);
+
+    setTimeout (function() {
+        battleHeaderCharmander.innerHTML = "What will you do?";
+    }, 5000);
+
 });
 
 emberButton.addEventListener('click', function(){
@@ -120,17 +144,50 @@ emberButton.addEventListener('click', function(){
     battleScreenCharmander.style.display = "none";
     winningScreen.style.display = "block";
     }
+
+    setTimeout(function() {
+        battleHeaderCharmander.innerHTML = "Squirtle used Water Gun! It's super effective! It deals 12 damage!";
+        starterCharmanderHealth -= 12;
+        playerHealthC.textContent = starterCharmanderHealth;
+
+        if(starterCharmanderHealth <= 0 && enemySquirtleHealth > 0) {
+    battleScreenCharmander.style.display = "none";
+    losingScreen.style.display = "block";
+    }
+
+    }, 2500);
+
+    setTimeout (function() {
+        battleHeaderCharmander.innerHTML = "What will you do?";
+    }, 5000);
+
 });
 
 tackleButtonSquirtle.addEventListener('click', function(){
-    battleHeaderSquirtle.innerHTML = "Squirtle used Tackle! It deals 9 damage!";
-    enemyBulbasaurHealth -= 9;
+    battleHeaderSquirtle.innerHTML = "Squirtle used Tackle! It deals 10 damage!";
+    enemyBulbasaurHealth -= 10;
     rivalHealthB.textContent = enemyBulbasaurHealth;
 
     if(enemyBulbasaurHealth <= 0) {
     battleScreenSquirtle.style.display = "none";
     winningScreen.style.display = "block";
     }
+
+    setTimeout(function() {
+        battleHeaderSquirtle.innerHTML = "Bulbasaur used Vine Whip! It's super effective! It deals 12 damage!";
+        starterSquirtleHealth -= 12;
+        playerHealthS.textContent = starterSquirtleHealth;
+
+        if(starterSquirtleHealth <= 0 && enemyBulbasaurHealth > 0) {
+    battleScreenSquirtle.style.display = "none";
+    losingScreen.style.display = "block";
+    }
+
+    }, 2500);
+
+    setTimeout (function() {
+        battleHeaderSquirtle.innerHTML = "What will you do?";
+    }, 5000);
 });
 
 waterGunButton.addEventListener('click', function(){
@@ -142,17 +199,49 @@ waterGunButton.addEventListener('click', function(){
     battleScreenSquirtle.style.display = "none";
     winningScreen.style.display = "block";
     }
+
+    setTimeout(function() {
+        battleHeaderSquirtle.innerHTML = "Bulbasaur used Vine Whip! It's super effective! It deals 12 damage!";
+        starterSquirtleHealth -= 12;
+        playerHealthS.textContent = starterSquirtleHealth;
+
+        if(starterSquirtleHealth <= 0 && enemyBulbasaurHealth > 0) {
+    battleScreenSquirtle.style.display = "none";
+    losingScreen.style.display = "block";
+    }
+
+    }, 2500);
+
+    setTimeout (function() {
+        battleHeaderSquirtle.innerHTML = "What will you do?";
+    }, 5000);
 });
 
 tackleButtonBulbasaur.addEventListener('click', function(){
-    battleHeaderBulbasaur.innerHTML = "Bulbasaur used Tackle! It deals 9 damage!";
-    enemyCharmanderHealth -= 9;
+    battleHeaderBulbasaur.innerHTML = "Bulbasaur used Tackle! It deals 10 damage!";
+    enemyCharmanderHealth -= 10;
     rivalHealthC.textContent = enemyCharmanderHealth;
 
     if(enemyCharmanderHealth <= 0) {
     battleScreenBulbasaur.style.display = "none";
     winningScreen.style.display = "block";
     }
+
+    setTimeout(function() {
+        battleHeaderBulbasaur.innerHTML = "Charmander used Ember! It's super effective! It deals 12 damage!";
+        starterBulbasaurHealth -= 12;
+        playerHealthB.textContent = starterBulbasaurHealth;
+
+        if(starterBulbasaurHealth <= 0 && enemyCharmanderHealth > 0) {
+    battleScreenBulbasaur.style.display = "none";
+    losingScreen.style.display = "block";
+    }
+
+    }, 2500);
+
+    setTimeout (function() {
+        battleHeaderBulbasaur.innerHTML = "What will you do?";
+    }, 5000);
 });
 
 vineWhipButton.addEventListener('click', function(){
@@ -164,6 +253,22 @@ vineWhipButton.addEventListener('click', function(){
     battleScreenBulbasaur.style.display = "none";
     winningScreen.style.display = "block";
     }
+
+    setTimeout(function() {
+        battleHeaderBulbasaur.innerHTML = "Charmander used Ember! It's super effective! It deals 12 damage!";
+        starterBulbasaurHealth -= 12;
+        playerHealthB.textContent = starterBulbasaurHealth;
+
+        if(starterBulbasaurHealth <= 0 && enemyCharmanderHealth > 0) {
+    battleScreenBulbasaur.style.display = "none";
+    losingScreen.style.display = "block";
+    }
+
+    }, 2500);
+
+    setTimeout (function() {
+        battleHeaderBulbasaur.innerHTML = "What will you do?";
+    }, 5000);
 });
 
 
