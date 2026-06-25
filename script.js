@@ -16,6 +16,7 @@ let tackleButtonSquirtle = document.querySelector(".tackleButtonSquirtle");
 let waterGunButton = document.querySelector(".waterGunButton");
 let tackleButtonBulbasaur = document.querySelector(".tackleButtonBulbasaur");
 let vineWhipButton = document.querySelector(".vineWhipButton");
+let submitButton = document.querySelector(".submitButton");
 let storyOpening = document.querySelector(".story-opening");
 let rivalIntroduction = document.querySelector(".rival-introduction");
 let starterChoice = document.querySelector(".starter-choice");
@@ -27,6 +28,8 @@ let battleScreenSquirtle = document.querySelector(".battleScreenSquirtle");
 let battleScreenBulbasaur = document.querySelector(".battleScreenBulbasaur");
 let runAwayScreen = document.querySelector(".runAwayScreen");
 let losingScreen = document.querySelector(".losingScreen");
+let sportScreen = document.querySelector(".sportScreen");
+let rivalQuestionScreen = document.querySelector(".rivalQuestionScreen");
 let winningScreen = document.querySelector(".winningScreen");
 let battleHeaderCharmander = document.querySelector(".battleHeaderCharmander");
 let battleHeaderSquirtle = document.querySelector(".battleHeaderSquirtle");
@@ -115,7 +118,7 @@ scratchButton.addEventListener('click', function(){
 
     if(enemySquirtleHealth <= 0) {
     battleScreenCharmander.style.display = "none";
-    winningScreen.style.display = "block";
+    rivalQuestionScreen.style.display = "block";
     }
 
     setTimeout(function() {
@@ -127,11 +130,11 @@ scratchButton.addEventListener('click', function(){
     battleScreenCharmander.style.display = "none";
     losingScreen.style.display = "block";
     }
-    }, 2500);
+    }, 2000);
 
     setTimeout (function() {
         battleHeaderCharmander.innerHTML = "What will you do?";
-    }, 5000);
+    }, 4000);
 
 });
 
@@ -142,7 +145,7 @@ emberButton.addEventListener('click', function(){
 
     if(enemySquirtleHealth <= 0) {
     battleScreenCharmander.style.display = "none";
-    winningScreen.style.display = "block";
+    rivalQuestionScreen.style.display = "block";
     }
 
     setTimeout(function() {
@@ -155,11 +158,11 @@ emberButton.addEventListener('click', function(){
     losingScreen.style.display = "block";
     }
 
-    }, 2500);
+    }, 2000);
 
     setTimeout (function() {
         battleHeaderCharmander.innerHTML = "What will you do?";
-    }, 5000);
+    }, 4000);
 
 });
 
@@ -170,7 +173,7 @@ tackleButtonSquirtle.addEventListener('click', function(){
 
     if(enemyBulbasaurHealth <= 0) {
     battleScreenSquirtle.style.display = "none";
-    winningScreen.style.display = "block";
+    rivalQuestionScreen.style.display = "block";
     }
 
     setTimeout(function() {
@@ -183,11 +186,11 @@ tackleButtonSquirtle.addEventListener('click', function(){
     losingScreen.style.display = "block";
     }
 
-    }, 2500);
+    }, 2000);
 
     setTimeout (function() {
         battleHeaderSquirtle.innerHTML = "What will you do?";
-    }, 5000);
+    }, 4000);
 });
 
 waterGunButton.addEventListener('click', function(){
@@ -197,7 +200,7 @@ waterGunButton.addEventListener('click', function(){
 
     if(enemyBulbasaurHealth <= 0) {
     battleScreenSquirtle.style.display = "none";
-    winningScreen.style.display = "block";
+    rivalQuestionScreen.style.display = "block";
     }
 
     setTimeout(function() {
@@ -210,11 +213,11 @@ waterGunButton.addEventListener('click', function(){
     losingScreen.style.display = "block";
     }
 
-    }, 2500);
+    }, 2000);
 
     setTimeout (function() {
         battleHeaderSquirtle.innerHTML = "What will you do?";
-    }, 5000);
+    }, 4000);
 });
 
 tackleButtonBulbasaur.addEventListener('click', function(){
@@ -224,7 +227,7 @@ tackleButtonBulbasaur.addEventListener('click', function(){
 
     if(enemyCharmanderHealth <= 0) {
     battleScreenBulbasaur.style.display = "none";
-    winningScreen.style.display = "block";
+    rivalQuestionScreen.style.display = "block";
     }
 
     setTimeout(function() {
@@ -237,11 +240,11 @@ tackleButtonBulbasaur.addEventListener('click', function(){
     losingScreen.style.display = "block";
     }
 
-    }, 2500);
+    }, 2000);
 
     setTimeout (function() {
         battleHeaderBulbasaur.innerHTML = "What will you do?";
-    }, 5000);
+    }, 4000);
 });
 
 vineWhipButton.addEventListener('click', function(){
@@ -251,7 +254,7 @@ vineWhipButton.addEventListener('click', function(){
 
     if(enemyCharmanderHealth <= 0) {
     battleScreenBulbasaur.style.display = "none";
-    winningScreen.style.display = "block";
+    rivalQuestionScreen.style.display = "block";
     }
 
     setTimeout(function() {
@@ -264,17 +267,27 @@ vineWhipButton.addEventListener('click', function(){
     losingScreen.style.display = "block";
     }
 
-    }, 2500);
+    }, 2000);
 
     setTimeout (function() {
         battleHeaderBulbasaur.innerHTML = "What will you do?";
-    }, 5000);
+    }, 4000);
 });
 
 
-// INSERT_VARIABLE.addEventListener('click', function(){
+submitButton.addEventListener('click', function(){
+    let rivalName = document.querySelector(".rivalName").value;
 
-// });
+    if(rivalName === "Maggie" || rivalName === "maggie"){
+        rivalQuestionScreen.style.display = "none";
+        winningScreen.style.display = "block";
+    }
+
+    else{
+        rivalQuestionScreen.style.display = "none";
+        sportScreen.style.display = "block";
+    }
+});
 
 // INSERT_VARIABLE.addEventListener('click', function(){
 

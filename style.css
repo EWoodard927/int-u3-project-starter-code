@@ -54,7 +54,9 @@ body {
 .battleScreenBulbasaur,
 .runAwayScreen,
 .losingScreen,
-.winningScreen {
+.winningScreen,
+.rivalQuestionScreen,
+.sportScreen {
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 20px;
@@ -72,7 +74,9 @@ body {
 .battleScreenBulbasaur,
 .runAwayScreen,
 .losingScreen,
-.winningScreen {
+.winningScreen,
+.rivalQuestionScreen,
+.sportScreen {
     display: none;
 }
 
